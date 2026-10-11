@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://ciknbxivpmtpq"]
+
+[ext_resource type="Script" uid="uid://cxg2o68xyun15" path="res://scenes/food.gd" id="1_af40f"]
+[ext_resource type="Texture2D" uid="uid://dc2sam1umw147" path="res://resources/food_sprite.png" id="1_xven1"]
+
+[sub_resource type="GDScript" id="GDScript_af40f"]
+script/source = "extends Area2D
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tg5hg"]
+radius = 16.0
+height = 38.0
+
+[node name="Food" type="Node2D" unique_id=1656821891]
+editor_description = "Food for the microbe
+Can be eaten by being collided with by the microbe or the microbe's tentacle"
+script = ExtResource("1_af40f")
+
+[node name="FoodBody" type="Area2D" parent="." unique_id=1074594654]
+script = SubResource("GDScript_af40f")
+
+[node name="FoodSprite" type="Sprite2D" parent="FoodBody" unique_id=1538893963]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_xven1")
+offset = Vector2(0, 2)
+hframes = 4
+vframes = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoodBody" unique_id=1400154916]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CapsuleShape2D_tg5hg")
+
+[connection signal="body_entered" from="FoodBody" to="." method="_on_food_body_body_entered"]

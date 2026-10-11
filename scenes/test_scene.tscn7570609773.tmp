@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b04g8712myaf5"]
+
+[ext_resource type="PackedScene" uid="uid://dkrka3t2lwfku" path="res://elements/player.tscn" id="1_g7g4h"]
+[ext_resource type="PackedScene" uid="uid://d1xkt7vnik8ax" path="res://scenes/background.tscn" id="1_j8ivh"]
+[ext_resource type="PackedScene" uid="uid://ciknbxivpmtpq" path="res://scenes/food.tscn" id="3_nd71p"]
+
+[node name="TestScene" type="Node2D" unique_id=742858757]
+
+[node name="Background" parent="." unique_id=392886063 instance=ExtResource("1_j8ivh")]
+scale = Vector2(5, 5)
+
+[node name="Player" parent="." unique_id=94534054 instance=ExtResource("1_g7g4h")]
+
+[node name="Food" parent="." unique_id=1656821891 instance=ExtResource("3_nd71p")]
+position = Vector2(-39, 1)

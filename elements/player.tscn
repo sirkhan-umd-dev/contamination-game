@@ -90,10 +90,10 @@ script = ExtResource("1_sf2tj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=136622635]
 position = Vector2(1, 5)
 sprite_frames = SubResource("SpriteFrames_vh3rb")
-frame_progress = 0.37566176
+frame_progress = 0.5744902
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1444607312]
 shape = SubResource("CircleShape2D_nhe5y")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1098510036]
-zoom = Vector2(3, 3)
+zoom = Vector2(2, 2)

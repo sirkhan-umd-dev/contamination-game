@@ -1,6 +1,11 @@
 extends CharacterBody2D
 const SPEED = 10000.0
 
+@onready var _animated_sprite = $AnimatedSprite2D
+
+func _process(_delta):
+	_animated_sprite.play("default")
+	
 func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
@@ -19,3 +24,5 @@ func _physics_process(delta: float) -> void:
 	
 	
 	move_and_slide()
+
+	
