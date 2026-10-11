@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dp51cl7wwxglc"]
+
+[ext_resource type="Texture2D" uid="uid://b8npf6x17m8c1" path="res://assets/sprite/Microbe_in_motion_stage_2.png" id="1_glpr6"]
+[ext_resource type="Script" uid="uid://b2dftpwppr7nb" path="res://character_movement.gd" id="1_pjt0s"]
+[ext_resource type="Texture2D" uid="uid://d4ilh74fogi1r" path="res://assets/background/Petri_Dish_backdrop.png" id="1_wa5vi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tg5hg"]
+radius = 13.038404
+
+[node name="Node2D" type="Node2D" unique_id=51928998]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1468021127]
+scale = Vector2(40, 40)
+texture = ExtResource("1_wa5vi")
+
+[node name="Microbe" type="CharacterBody2D" parent="." unique_id=1990447740]
+script = ExtResource("1_pjt0s")
+
+[node name="MicrobeInMotionStage2" type="Sprite2D" parent="Microbe" unique_id=2113711701]
+position = Vector2(-26.999985, -25)
+scale = Vector2(0.93749976, 0.93749994)
+texture = ExtResource("1_glpr6")
+centered = false
+hframes = 3
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Microbe" unique_id=937046316]
+shape = SubResource("CircleShape2D_tg5hg")
+
+[node name="Camera2D" type="Camera2D" parent="Microbe" unique_id=286483321]
