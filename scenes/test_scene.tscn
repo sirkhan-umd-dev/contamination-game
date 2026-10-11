@@ -2,9 +2,78 @@
 
 [ext_resource type="PackedScene" uid="uid://dkrka3t2lwfku" path="res://elements/player.tscn" id="1_g7g4h"]
 [ext_resource type="PackedScene" uid="uid://d1xkt7vnik8ax" path="res://scenes/background.tscn" id="1_j8ivh"]
+[ext_resource type="PackedScene" uid="uid://ciknbxivpmtpq" path="res://scenes/food.tscn" id="3_nd71p"]
+[ext_resource type="Script" uid="uid://dvdggiaycgio5" path="res://scenes/food_spawner.gd" id="4_7ddre"]
+[ext_resource type="Script" uid="uid://cbngqd6yusu25" path="res://scenes/dish_boundary.gd" id="5_qjeyg"]
+
+[sub_resource type="GDScript" id="GDScript_nd71p"]
+script/source = "extends Timer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tg5hg"]
+size = Vector2(95.75, 3533)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8og8"]
+size = Vector2(78, 3500)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7yfc1"]
+size = Vector2(4399, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8sme2"]
+size = Vector2(4386, 107.5)
 
 [node name="TestScene" type="Node2D" unique_id=742858757]
 
 [node name="Background" parent="." unique_id=392886063 instance=ExtResource("1_j8ivh")]
+position = Vector2(74, 141)
+scale = Vector2(5, 5)
 
 [node name="Player" parent="." unique_id=94534054 instance=ExtResource("1_g7g4h")]
+position = Vector2(74, 140)
+
+[node name="Food" parent="." unique_id=1656821891 instance=ExtResource("3_nd71p")]
+position = Vector2(35, 141)
+
+[node name="FoodSpawner" type="Node2D" parent="." unique_id=164193029]
+position = Vector2(74, 140)
+script = ExtResource("4_7ddre")
+food_scene = ExtResource("3_nd71p")
+
+[node name="Timer" type="Timer" parent="FoodSpawner" unique_id=1468679144]
+autostart = true
+script = SubResource("GDScript_nd71p")
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=1566925813]
+position = Vector2(75, 183)
+
+[node name="RightWall" type="CollisionShape2D" parent="Walls" unique_id=657103412]
+position = Vector2(2247.125, 24.5)
+shape = SubResource("RectangleShape2D_tg5hg")
+
+[node name="LeftWall" type="CollisionShape2D" parent="Walls" unique_id=325809988]
+position = Vector2(-2212, 13)
+shape = SubResource("RectangleShape2D_f8og8")
+
+[node name="BottomWall" type="CollisionShape2D" parent="Walls" unique_id=1858531526]
+position = Vector2(-8, 1765)
+shape = SubResource("RectangleShape2D_7yfc1")
+
+[node name="TopWall" type="CollisionShape2D" parent="Walls" unique_id=685068699]
+position = Vector2(23, -1604)
+shape = SubResource("RectangleShape2D_8sme2")
+
+[node name="DishBoundary" type="StaticBody2D" parent="." unique_id=1047385599]
+position = Vector2(164, 199)
+script = ExtResource("5_qjeyg")
+
+[connection signal="timeout" from="FoodSpawner/Timer" to="FoodSpawner" method="_on_timer_timeout"]
