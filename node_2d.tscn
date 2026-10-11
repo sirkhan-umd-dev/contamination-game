@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://dawu6yjnwcv73"]
-
-[node name="Node2D" type="Node2D" unique_id=51928998]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1990447740]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D" unique_id=538511848]
-position = Vector2(9, 2)
