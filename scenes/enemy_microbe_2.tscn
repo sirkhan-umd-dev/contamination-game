@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://d1ep2l0n1ghcx"]
+
+[ext_resource type="Texture2D" uid="uid://rmljpd0plqt8" path="res://resources/Enemy_microbe_2.png" id="1_x38k3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_061s4"]
+atlas = ExtResource("1_x38k3")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2bef"]
+atlas = ExtResource("1_x38k3")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lvof"]
+atlas = ExtResource("1_x38k3")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhgmu"]
+atlas = ExtResource("1_x38k3")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2ede"]
+atlas = ExtResource("1_x38k3")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f8og8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_061s4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2bef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lvof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhgmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2ede")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6eyh5"]
+radius = 23.0
+
+[node name="EnemyMicrobe2" type="CharacterBody2D" unique_id=1162977488]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=852099709]
+sprite_frames = SubResource("SpriteFrames_f8og8")
+frame_progress = 0.381043
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1674532885]
+shape = SubResource("CircleShape2D_6eyh5")

@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://ciknbxivpmtpq" path="res://scenes/food.tscn" id="3_nd71p"]
 [ext_resource type="Script" uid="uid://dvdggiaycgio5" path="res://scenes/food_spawner.gd" id="4_7ddre"]
 [ext_resource type="Script" uid="uid://cbngqd6yusu25" path="res://scenes/dish_boundary.gd" id="5_qjeyg"]
+[ext_resource type="PackedScene" uid="uid://c88e8fu21wcbg" path="res://scenes/enemy_microbe_1.tscn" id="6_wtsjf"]
+[ext_resource type="PackedScene" uid="uid://d1ep2l0n1ghcx" path="res://scenes/enemy_microbe_2.tscn" id="7_rnaij"]
+[ext_resource type="PackedScene" uid="uid://dfire6x7mf1fo" path="res://hud.tscn" id="8_rnaij"]
 
 [sub_resource type="GDScript" id="GDScript_nd71p"]
 script/source = "extends Timer
@@ -32,10 +35,12 @@ size = Vector2(4399, 39)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8sme2"]
 size = Vector2(4386, 107.5)
 
-[node name="TestScene" type="Node2D" unique_id=742858757]
+[node name="GameScene" type="Node2D" unique_id=742858757]
+
+[node name="Control" parent="." unique_id=577452074 instance=ExtResource("8_rnaij")]
 
 [node name="Background" parent="." unique_id=392886063 instance=ExtResource("1_j8ivh")]
-position = Vector2(74, 141)
+position = Vector2(75.00001, 183.00002)
 scale = Vector2(5, 5)
 
 [node name="Player" parent="." unique_id=94534054 instance=ExtResource("1_g7g4h")]
@@ -73,7 +78,13 @@ position = Vector2(23, -1604)
 shape = SubResource("RectangleShape2D_8sme2")
 
 [node name="DishBoundary" type="StaticBody2D" parent="." unique_id=1047385599]
-position = Vector2(164, 199)
+position = Vector2(74, 140)
 script = ExtResource("5_qjeyg")
+
+[node name="EnemyMicrobe1" parent="." unique_id=912716630 instance=ExtResource("6_wtsjf")]
+position = Vector2(143, 136)
+
+[node name="EnemyMicrobe2" parent="." unique_id=1162977488 instance=ExtResource("7_rnaij")]
+position = Vector2(218, 134)
 
 [connection signal="timeout" from="FoodSpawner/Timer" to="FoodSpawner" method="_on_timer_timeout"]
