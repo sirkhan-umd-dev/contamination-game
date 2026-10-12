@@ -97,3 +97,13 @@ shape = SubResource("CircleShape2D_nhe5y")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1098510036]
 zoom = Vector2(2, 2)
+
+[node name="StaminaCooldown" type="Timer" parent="." unique_id=232425127]
+wait_time = 3.0
+one_shot = true
+
+[node name="DashDuration" type="Timer" parent="." unique_id=1377575323]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="StaminaCooldown" to="." method="_on_stamina_cooldown_timeout"]
