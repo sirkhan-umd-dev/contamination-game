@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dxp3q6dov6x1h"]
+
+[ext_resource type="FontFile" uid="uid://w6cuja6h1vpr" path="res://elements/UI/Decently Long Font.ttf" id="1_ncxyx"]
+
+[node name="StartScreen" type="CanvasLayer" unique_id=273752443]
+follow_viewport_enabled = true
+follow_viewport_scale = 0.001
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=758673802]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartScreenLabel" type="Label" parent="CenterContainer" unique_id=762614109]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ncxyx")
+theme_override_font_sizes/font_size = 35
+text = "YOU MUST FEED
+
+Consume enough food to hit a growth milestone before time runs out
+Choose stats when you hit a milestone
+
+WASD to move
+
+Press SPACE to start"
+horizontal_alignment = 1
+vertical_alignment = 1
