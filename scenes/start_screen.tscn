@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dxp3q6dov6x1h"]
+
+[ext_resource type="Script" uid="uid://4gdc20ih8vsg" path="res://elements/scripts/start_screen.gd" id="1_o7i0r"]
+[ext_resource type="FontFile" uid="uid://w6cuja6h1vpr" path="res://elements/UI/Decently Long Font.ttf" id="1_tx5wa"]
+[ext_resource type="PackedScene" uid="uid://d1xkt7vnik8ax" path="res://scenes/background.tscn" id="2_he1sj"]
+
+[node name="StartScreen" type="CanvasLayer" unique_id=673425874]
+script = ExtResource("1_o7i0r")
+
+[node name="Background" parent="." unique_id=392886063 instance=ExtResource("2_he1sj")]
+position = Vector2(122, 50)
+
+[node name="Button" type="Button" parent="." unique_id=1675636543]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 490.0
+offset_top = -186.0
+offset_right = -480.0
+offset_bottom = -124.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_tx5wa")
+theme_override_font_sizes/font_size = 50
+text = "Begin"
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=758673802]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -135.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartScreenLabel" type="Label" parent="CenterContainer" unique_id=762614109]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_tx5wa")
+theme_override_font_sizes/font_size = 35
+text = "YOU MUST FEED
+
+Consume enough food to hit a growth milestone before time runs out
+Choose stats when you hit a milestone
+
+WASD to move
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

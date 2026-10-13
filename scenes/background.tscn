@@ -1,8 +1,15 @@
 [gd_scene format=3 uid="uid://d1xkt7vnik8ax"]
 
-[ext_resource type="Texture2D" uid="uid://bvyw7nvgq1hk0" path="res://resources/Petri_Dish_backdrop_big.png" id="1_bkp1e"]
+[ext_resource type="Texture2D" uid="uid://qcposslkxh01" path="res://resources/Desk_Large.png" id="1_y0upk"]
+[ext_resource type="Texture2D" uid="uid://bls0n26svtwbv" path="res://resources/Petri_Dish_backdrop.png" id="2_jougr"]
 
 [node name="Background" type="Node2D" unique_id=392886063]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1820034821]
-texture = ExtResource("1_bkp1e")
+[node name="Desk" type="Sprite2D" parent="." unique_id=1648028909]
+position = Vector2(450, 194)
+texture = ExtResource("1_y0upk")
+
+[node name="PetriDish" type="Sprite2D" parent="." unique_id=1820034821]
+position = Vector2(453.00003, 196)
+scale = Vector2(1.609375, 1.59375)
+texture = ExtResource("2_jougr")
