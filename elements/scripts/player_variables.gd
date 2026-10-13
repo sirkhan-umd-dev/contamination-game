@@ -1,10 +1,11 @@
 extends Node
 signal food_eaten(new_amount)
-signal ability_unlocked(ability) # 0 = dash, 1 = slime toss, 2 = invis
-signal stat_gained(stat)
+signal ability_unlocked(ability) # 0 = dash, 1 = slime toss, 2 = invisibility
+signal stat_boost(stat_choices)
 
-@onready var milestone_timer = $HUD/MilestoneTimerLabel/MilestoneTimer
-@onready var player:CharacterBody2D = $Player
+var milestone_timer: Timer = null
+var player: CharacterBody2D = null
+var player_camera: Camera2D = null
 
 var food_amount := 0
 var player_health := 50
@@ -12,14 +13,20 @@ var stat_pool = ["Speed", "Size", "Evasion", "Senses", "Stamina"]
 var growth_index = 0
 var growth_checks = [10, 25, 5]
 
+func get_stat_choices(count: int = 3) -> Array:
+	var pool := stat_pool.duplicate()
+	pool.shuffle()
+	return pool.slice(0, count)
+	
 func eat_food(amount := 1):
 	food_amount += amount
 	food_eaten.emit(food_amount)
-	if(food_amount >= growth_checks[min(2, growth_index)]): #ability gain
+	if(food_amount >= growth_checks[growth_index]): #ability gain
 		handle_growth(growth_index < 2)
-		food_amount = food_amount - growth_checks[min(2, growth_index)]
+		food_amount = food_amount - growth_checks[growth_index]
 		milestone_timer.wait_time = 20 
-		growth_index = growth_index + 1
+		growth_index = min(growth_index + 1, 2) 
+	
 		
 # handle the bonuses at each growth stage
 func handle_growth(ability_gained: bool):
@@ -27,9 +34,7 @@ func handle_growth(ability_gained: bool):
 	if ability_gained:
 		ability_unlocked.emit(min(growth_index, 1))
 	else:
-		var stat = randi() % 5
-		stat_gained.emit(stat)
-		print(stat_pool[stat] + " gained!")
+		stat_boost.emit(get_stat_choices())
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -38,4 +43,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if player_health == 0:
+		get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
 	pass

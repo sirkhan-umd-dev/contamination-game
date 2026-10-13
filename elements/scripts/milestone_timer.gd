@@ -11,4 +11,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	milestone_timer_label.text = "%d" % [wait_time]
+	milestone_timer_label.text = "%d" % [time_left]

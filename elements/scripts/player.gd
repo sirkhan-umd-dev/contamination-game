@@ -22,7 +22,7 @@ var invis_unlocked = false
 
 func _ready() -> void:
 	PlayerVariables.ability_unlocked.connect(_on_ability_gained)
-	PlayerVariables.stat_gained.connect(_on_stat_gained)
+	PlayerVariables.stat_boost.connect(_on_stat_gained)
 	
 func _process(_delta):
 	
@@ -92,4 +92,3 @@ func _on_stat_gained(stat: int) -> void:
 
 func _on_invis_duration_timeout() -> void:
 	detection_chance = temp_detection_chance
-	

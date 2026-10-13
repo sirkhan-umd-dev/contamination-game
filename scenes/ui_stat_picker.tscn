@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bilbunosjrw7i"]
+
+[ext_resource type="FontFile" uid="uid://w6cuja6h1vpr" path="res://elements/UI/Decently Long Font.ttf" id="1_0p6kr"]
+[ext_resource type="Script" uid="uid://bv1pdmi3ptp0p" path="res://elements/scripts/ui_stat_picker.gd" id="1_lisxm"]
+
+[node name="StatPicker" type="CanvasLayer" unique_id=265394552]
+script = ExtResource("1_lisxm")
+
+[node name="StatOption1" type="Button" parent="." unique_id=111013801]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 196.0
+offset_top = 299.0
+offset_right = 411.0
+offset_bottom = -280.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_0p6kr")
+theme_override_font_sizes/font_size = 45
+text = "Evasion"
+
+[node name="StatOption2" type="Button" parent="." unique_id=659874886]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 537.0
+offset_top = 299.0
+offset_right = 752.0
+offset_bottom = -280.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_0p6kr")
+theme_override_font_sizes/font_size = 45
+text = "Stamina"
+
+[node name="StatOption3" type="Button" parent="." unique_id=189830139]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 887.0
+offset_top = 299.0
+offset_right = 1102.0
+offset_bottom = -280.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_0p6kr")
+theme_override_font_sizes/font_size = 45
+text = "Senses"
+
+[node name="Label" type="Label" parent="." unique_id=1941262185]
+offset_left = 461.0
+offset_top = 86.0
+offset_right = 772.0
+offset_bottom = 157.0
+theme_override_colors/font_color = Color(0, 0.61960787, 0, 1)
+theme_override_fonts/font = ExtResource("1_0p6kr")
+theme_override_font_sizes/font_size = 70
+text = "Grow Stronger"
+horizontal_alignment = 1
+vertical_alignment = 1

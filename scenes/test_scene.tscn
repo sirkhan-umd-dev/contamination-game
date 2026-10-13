@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b04g8712myaf5"]
 
 [ext_resource type="PackedScene" uid="uid://dkrka3t2lwfku" path="res://scenes/player.tscn" id="1_g7g4h"]
+[ext_resource type="PackedScene" uid="uid://bilbunosjrw7i" path="res://scenes/ui_stat_picker.tscn" id="1_h3xc6"]
 [ext_resource type="PackedScene" uid="uid://d1xkt7vnik8ax" path="res://scenes/background.tscn" id="1_j8ivh"]
 [ext_resource type="PackedScene" uid="uid://ciknbxivpmtpq" path="res://scenes/food.tscn" id="3_nd71p"]
 [ext_resource type="Script" uid="uid://dvdggiaycgio5" path="res://elements/scripts/food_spawner.gd" id="4_7ddre"]
@@ -37,7 +38,9 @@ size = Vector2(4386, 107.5)
 
 [node name="GameScene" type="Node2D" unique_id=742858757]
 
-[node name="Control" parent="." unique_id=577452074 instance=ExtResource("8_rnaij")]
+[node name="HUD" parent="." unique_id=823603767 instance=ExtResource("8_rnaij")]
+
+[node name="StatPicker" parent="." unique_id=1733775513 instance=ExtResource("1_h3xc6")]
 
 [node name="Background" parent="." unique_id=392886063 instance=ExtResource("1_j8ivh")]
 position = Vector2(75.00001, 183.00002)

@@ -3,6 +3,9 @@ extends CanvasLayer
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#Set Health Bar to max hp
+	health_bar.max_value = PlayerVariables.player_health
+	
 	PlayerVariables.food_eaten.connect(_on_food_eaten)
 	_on_food_eaten(PlayerVariables.food_amount)
 	pass # Replace with function body.
