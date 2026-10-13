@@ -4,7 +4,7 @@ extends RichTextLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$MilestoneTimer.wait_time = 30
+	$MilestoneTimer.wait_time = PlayerVariables.milestone_time
 	$MilestoneTimer.start()
 	pass # Replace with function body.
 
