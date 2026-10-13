@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://djr6d3v0sayav" path="res://resources/Microbelvl0_Spite_sheet.png" id="1_5urir"]
 [ext_resource type="Script" uid="uid://c752jxipvlmvx" path="res://elements/scripts/player.gd" id="1_sf2tj"]
+[ext_resource type="Script" uid="uid://bbfmv32uppgp3" path="res://elements/scripts/player_camera.gd" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sf2tj"]
 atlas = ExtResource("1_5urir")
@@ -84,7 +85,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_nhe5y"]
 radius = 14.0
 
-[node name="Player" type="CharacterBody2D" unique_id=94534054]
+[node name="Player" type="CharacterBody2D" unique_id=94534054 groups=["player"]]
 script = ExtResource("1_sf2tj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=136622635]
@@ -97,6 +98,7 @@ shape = SubResource("CircleShape2D_nhe5y")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1098510036]
 zoom = Vector2(2, 2)
+script = ExtResource("3_qhqgy")
 
 [node name="StaminaCooldown" type="Timer" parent="." unique_id=232425127]
 wait_time = 3.0

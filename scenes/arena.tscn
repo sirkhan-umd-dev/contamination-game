@@ -7,13 +7,13 @@
 size = Vector2(38.300034, 814.3001)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27ga2"]
-size = Vector2(34.60018, 821.4)
+size = Vector2(31.600082, 907.2001)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0wof"]
-size = Vector2(950.6001, 31)
+size = Vector2(1025.5, 34.49994)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fu4bq"]
-size = Vector2(995.15, 43.950043)
+size = Vector2(1093.2999, 43.950043)
 
 [node name="Arena" type="Node2D" unique_id=1055088889]
 
@@ -31,17 +31,17 @@ scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_444vf")
 
 [node name="LeftWall" type="CollisionShape2D" parent="Walls" unique_id=1366366490]
-position = Vector2(-434.10007, 31.3)
+position = Vector2(-476.8998, -11.600046)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_27ga2")
 
 [node name="BottomWall" type="CollisionShape2D" parent="Walls" unique_id=1541836521]
-position = Vector2(13.8, 378.19998)
+position = Vector2(-11.549997, 420.24994)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_h0wof")
 
 [node name="TopWall" type="CollisionShape2D" parent="Walls" unique_id=2013923324]
-position = Vector2(3.9000025, -319.2)
+position = Vector2(-2.8999977, -349.4)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_fu4bq")
 

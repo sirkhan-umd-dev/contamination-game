@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dwqkjpya76p2o"]
+
+[ext_resource type="Script" uid="uid://dvdggiaycgio5" path="res://elements/scripts/food_spawner.gd" id="1_q4xlj"]
+[ext_resource type="PackedScene" uid="uid://ciknbxivpmtpq" path="res://scenes/food.tscn" id="2_2nf2v"]
+
+[sub_resource type="GDScript" id="GDScript_nd71p"]
+script/source = "extends Timer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="FoodSpawner" type="Node2D" unique_id=1904963109]
+script = ExtResource("1_q4xlj")
+food_scene = ExtResource("2_2nf2v")
+
+[node name="Timer" type="Timer" parent="." unique_id=1465526735]
+autostart = true
+script = SubResource("GDScript_nd71p")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
