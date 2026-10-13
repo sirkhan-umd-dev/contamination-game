@@ -15,11 +15,11 @@ var growth_checks = [10, 25, 5]
 func eat_food(amount := 1):
 	food_amount += amount
 	food_eaten.emit(food_amount)
-	if(food_amount >= growth_checks[growth_index]): #ability gain
+	if(food_amount >= growth_checks[min(2, growth_index)]): #ability gain
 		handle_growth(growth_index < 2)
-		food_amount = food_amount - growth_checks[growth_index]
+		food_amount = food_amount - growth_checks[min(2, growth_index)]
 		milestone_timer.wait_time = 20 
-		growth_index = min(growth_index + 1, 2) 
+		growth_index = growth_index + 1
 		
 # handle the bonuses at each growth stage
 func handle_growth(ability_gained: bool):

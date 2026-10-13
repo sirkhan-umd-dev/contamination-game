@@ -46,16 +46,42 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jdifn"]
-height = 36.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a4ufb"]
+radius = 13.0
+height = 52.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a4ufb"]
+radius = 91.44397
 
 [node name="EnemyMicrobe1" type="CharacterBody2D" unique_id=912716630]
-
-[node name="EnemyMicrobe1" type="AnimatedSprite2D" parent="." unique_id=1924363267]
-position = Vector2(1, 0)
-sprite_frames = SubResource("SpriteFrames_x2drx")
 script = ExtResource("2_gttcm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=24201877]
-position = Vector2(1, 2)
-shape = SubResource("CapsuleShape2D_jdifn")
+[node name="EnemyMicrobe1" type="AnimatedSprite2D" parent="." unique_id=1924363267]
+rotation = 4.712389
+sprite_frames = SubResource("SpriteFrames_x2drx")
+frame_progress = 0.6141191
+
+[node name="hitbox" type="Area2D" parent="." unique_id=1105766574]
+position = Vector2(0, -1)
+rotation = 4.712389
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=572669965]
+shape = SubResource("CapsuleShape2D_a4ufb")
+
+[node name="Detection Radius" type="Area2D" parent="." unique_id=1668247943]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Radius" unique_id=458684911]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_a4ufb")
+
+[node name="Activity Timer" type="Timer" parent="." unique_id=1524683598]
+wait_time = 3.0
+one_shot = true
+
+[node name="Motion Timer" type="Timer" parent="." unique_id=2036875354]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="area_exited" from="Detection Radius" to="." method="_on_detection_radius_area_exited"]
+[connection signal="body_entered" from="Detection Radius" to="." method="_on_detection_radius_body_entered"]

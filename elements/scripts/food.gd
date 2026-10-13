@@ -11,5 +11,6 @@ func _process(delta: float) -> void:
 
 
 func _on_food_body_body_entered(body: Node2D) -> void:
-	PlayerVariables.eat_food()
+	if body.is_in_group("player"):
+		PlayerVariables.eat_food()
 	queue_free() # Replace with function body.
