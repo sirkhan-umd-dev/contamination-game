@@ -4,13 +4,8 @@ extends Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-<<<<<<< Updated upstream
-	$MilestoneTimer.wait_time = 30
-	$MilestoneTimer.start()
-=======
 	PlayerVariables.milestone_timer = self
 	start()
->>>>>>> Stashed changes
 	pass # Replace with function body.
 
 
