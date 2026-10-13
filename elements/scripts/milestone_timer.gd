@@ -1,15 +1,14 @@
-extends RichTextLabel
+extends Timer
 
-@onready var milestone_timer_label: RichTextLabel = $"."
+@onready var milestone_timer_label: RichTextLabel = get_parent()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$MilestoneTimer.wait_time = PlayerVariables.milestone_time
-	$MilestoneTimer.start()
+	PlayerVariables.milestone_timer = self
+	start()
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var time_left: int = $MilestoneTimer.time_left
-	milestone_timer_label.text = "%d" % [time_left]
+	milestone_timer_label.text = "%d" % [wait_time]
