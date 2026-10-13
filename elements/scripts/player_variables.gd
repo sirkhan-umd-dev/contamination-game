@@ -25,7 +25,7 @@ func eat_food(amount := 1):
 func handle_growth(ability_gained: bool):
 	#player.scale = Vector2(player.scale.x + 1, player.scale.y + 1)
 	if ability_gained:
-		ability_unlocked.emit(0)
+		ability_unlocked.emit(min(growth_index, 1))
 	else:
 		var stat = randi() % 5
 		stat_gained.emit(stat)

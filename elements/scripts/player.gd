@@ -72,6 +72,8 @@ func _on_ability_gained(ability: int) -> void:
 	
 	if ability == 0:
 		dash_unlocked = true
+	if ability == 1:
+		invis_unlocked = true
 
 func _on_stat_gained(stat: int) -> void:
 	scale = Vector2(scale.x + 0.5, scale.y + 0.5)
