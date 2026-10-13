@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b8y13iqni2x82" path="res://scenes/arena.tscn" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://dkrka3t2lwfku" path="res://scenes/player.tscn" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://ciknbxivpmtpq" path="res://scenes/food.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://dwqkjpya76p2o" path="res://scenes/food_spawner.tscn" id="6_tefeu"]
 
 [node name="Main" type="Node2D" unique_id=1950321401]
 script = ExtResource("1_sugp2")
@@ -17,4 +18,6 @@ position = Vector2(-23, 3)
 [node name="Player" parent="." unique_id=94534054 instance=ExtResource("3_tbgi4")]
 
 [node name="Food" parent="." unique_id=1656821891 instance=ExtResource("5_tbgi4")]
-position = Vector2(-3930.1914, 1056.6462)
+position = Vector2(-141, 69)
+
+[node name="FoodSpawner" parent="." unique_id=1904963109 instance=ExtResource("6_tefeu")]

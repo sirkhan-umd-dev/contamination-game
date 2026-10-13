@@ -3,16 +3,19 @@ extends Node2D
 @export var food_scene: PackedScene
 @export var margin := 100.0
 @export var dish_center := Vector2.ZERO
-@export var dish_radius := Vector2(1850, 1550)  # slightly smaller than the wall
+@export var dish_radius := Vector2(3850, 3200)  # slightly smaller than the wall
 
 func _on_timer_timeout():
-	for attempt in 20:
+	print("spawn timer fired, camera: ", PlayerVariables.player_camera)
+	for attempt in 1:
 		var pos = _random_offscreen_position()
 		if _is_inside_dish(pos):
 			var food = food_scene.instantiate()
-			food.global_position = pos
 			add_child(food)
+			food.global_position = pos
+			print("spawned at ", pos)
 			return
+	print("no valid position found")
 	
 func _random_offscreen_position() -> Vector2:
 	var camera = PlayerVariables.player_camera

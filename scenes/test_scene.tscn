@@ -4,25 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://bilbunosjrw7i" path="res://scenes/ui_stat_picker.tscn" id="1_h3xc6"]
 [ext_resource type="PackedScene" uid="uid://d1xkt7vnik8ax" path="res://scenes/background.tscn" id="1_j8ivh"]
 [ext_resource type="PackedScene" uid="uid://ciknbxivpmtpq" path="res://scenes/food.tscn" id="3_nd71p"]
-[ext_resource type="Script" uid="uid://dvdggiaycgio5" path="res://elements/scripts/food_spawner.gd" id="4_7ddre"]
 [ext_resource type="Script" uid="uid://cbngqd6yusu25" path="res://elements/scripts/dish_boundary.gd" id="5_qjeyg"]
+[ext_resource type="PackedScene" uid="uid://dwqkjpya76p2o" path="res://scenes/food_spawner.tscn" id="6_h3xc6"]
 [ext_resource type="PackedScene" uid="uid://c88e8fu21wcbg" path="res://scenes/enemy_microbe_1.tscn" id="6_wtsjf"]
 [ext_resource type="PackedScene" uid="uid://d1ep2l0n1ghcx" path="res://scenes/enemy_microbe_2.tscn" id="7_rnaij"]
 [ext_resource type="PackedScene" uid="uid://dfire6x7mf1fo" path="res://scenes/hud.tscn" id="8_rnaij"]
-
-[sub_resource type="GDScript" id="GDScript_nd71p"]
-script/source = "extends Timer
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tg5hg"]
 size = Vector2(95.75, 3533)
@@ -52,14 +38,8 @@ position = Vector2(74, 140)
 [node name="Food" parent="." unique_id=1656821891 groups=["food"] instance=ExtResource("3_nd71p")]
 position = Vector2(35, 141)
 
-[node name="FoodSpawner" type="Node2D" parent="." unique_id=164193029]
-position = Vector2(74, 140)
-script = ExtResource("4_7ddre")
-food_scene = ExtResource("3_nd71p")
-
-[node name="Timer" type="Timer" parent="FoodSpawner" unique_id=1468679144]
-autostart = true
-script = SubResource("GDScript_nd71p")
+[node name="FoodSpawner2" parent="Food" unique_id=1904963109 instance=ExtResource("6_h3xc6")]
+position = Vector2(39, -1)
 
 [node name="Walls" type="StaticBody2D" parent="." unique_id=1566925813]
 position = Vector2(75, 183)
@@ -89,5 +69,3 @@ position = Vector2(143, 136)
 
 [node name="EnemyMicrobe2" parent="." unique_id=1162977488 instance=ExtResource("7_rnaij")]
 position = Vector2(218, 134)
-
-[connection signal="timeout" from="FoodSpawner/Timer" to="FoodSpawner" method="_on_timer_timeout"]
