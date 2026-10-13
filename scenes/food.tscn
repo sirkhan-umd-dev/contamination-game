@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ciknbxivpmtpq"]
 
-[ext_resource type="Script" uid="uid://cxg2o68xyun15" path="res://scenes/food.gd" id="1_af40f"]
+[ext_resource type="Script" uid="uid://cxg2o68xyun15" path="res://elements/scripts/food.gd" id="1_af40f"]
 [ext_resource type="Texture2D" uid="uid://dc2sam1umw147" path="res://resources/food_sprite.png" id="1_xven1"]
 
 [sub_resource type="GDScript" id="GDScript_af40f"]

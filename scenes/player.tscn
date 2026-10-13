@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dkrka3t2lwfku"]
 
 [ext_resource type="Texture2D" uid="uid://djr6d3v0sayav" path="res://resources/Microbelvl0_Spite_sheet.png" id="1_5urir"]
-[ext_resource type="Script" uid="uid://c752jxipvlmvx" path="res://elements/player.gd" id="1_sf2tj"]
+[ext_resource type="Script" uid="uid://c752jxipvlmvx" path="res://elements/scripts/player.gd" id="1_sf2tj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sf2tj"]
 atlas = ExtResource("1_5urir")
