@@ -62,14 +62,14 @@ func _on_ability_gained(ability: int) -> void:
 		dash_unlocked = true
 
 func _on_stat_gained(stat: int) -> void:
-	
+	scale = Vector2(scale.x + 0.5, scale.y + 0.5)
 	if stat == 0:
 		speed += 1000.0
 	elif stat == 1:
-		scale = Vector2(scale.x + 0.1, scale.y + 0.1)
+		scale = Vector2(scale.x + 0.2, scale.y + 0.2)
 	elif stat == 2:
-		_collision.scale = Vector2(_collision.scale.x - 0.1, _collision.scale.y - 0.1)
+		_collision.scale = Vector2(_collision.scale.x - 0.2, _collision.scale.y - 0.2)
 	elif stat == 3:
 		_camera.zoom = Vector2(_camera.zoom.x - 0.1, _camera.zoom.y - 0.1)
 	elif stat == 4:
-		stamina_cd -= 0.5
+		stamina_cd = max(0, stamina.cd - 0.5)
