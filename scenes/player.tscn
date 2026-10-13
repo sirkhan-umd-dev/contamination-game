@@ -106,4 +106,13 @@ one_shot = true
 wait_time = 0.5
 one_shot = true
 
+[node name="InvisCooldown" type="Timer" parent="." unique_id=610065254]
+wait_time = 8.0
+one_shot = true
+
+[node name="InvisDuration" type="Timer" parent="." unique_id=503771585]
+wait_time = 5.0
+one_shot = true
+
 [connection signal="timeout" from="StaminaCooldown" to="." method="_on_stamina_cooldown_timeout"]
+[connection signal="timeout" from="InvisDuration" to="." method="_on_invis_duration_timeout"]
