@@ -46,10 +46,10 @@ size = Vector2(4386, 107.5)
 position = Vector2(75.00001, 183.00002)
 scale = Vector2(5, 5)
 
-[node name="Player" parent="." unique_id=94534054 instance=ExtResource("1_g7g4h")]
+[node name="Player" parent="." unique_id=94534054 groups=["carnivore", "player"] instance=ExtResource("1_g7g4h")]
 position = Vector2(74, 140)
 
-[node name="Food" parent="." unique_id=1656821891 instance=ExtResource("3_nd71p")]
+[node name="Food" parent="." unique_id=1656821891 groups=["food"] instance=ExtResource("3_nd71p")]
 position = Vector2(35, 141)
 
 [node name="FoodSpawner" type="Node2D" parent="." unique_id=164193029]
