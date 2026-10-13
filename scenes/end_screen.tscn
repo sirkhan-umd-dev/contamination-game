@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bqgxt6fi4wspx"]
 
-[ext_resource type="FontFile" uid="uid://w6cuja6h1vpr" path="res://elements/UI/Decently Long Font.ttf" id="1_my301"]
+[ext_resource type="Script" uid="uid://bla7eubkxgfp6" path="res://elements/scripts/end_screen.gd" id="1_6e1uj"]
+[ext_resource type="FontFile" uid="uid://w6cuja6h1vpr" path="res://elements/UI/Decently Long Font.ttf" id="2_jc7ji"]
 
 [node name="EndScreen" type="CanvasLayer" unique_id=1259798853]
+script = ExtResource("1_6e1uj")
 
 [node name="CenterContainer2" type="CenterContainer" parent="." unique_id=103504690]
 anchors_preset = 10
@@ -12,7 +14,7 @@ grow_horizontal = 2
 
 [node name="EndGameTitle" type="Label" parent="CenterContainer2" unique_id=820684177]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_my301")
+theme_override_fonts/font = ExtResource("2_jc7ji")
 theme_override_font_sizes/font_size = 60
 text = "Game Over"
 
@@ -28,6 +30,8 @@ grow_vertical = 2
 
 [node name="PlayAgain" type="Button" parent="CenterContainer" unique_id=1284962444]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_my301")
+theme_override_fonts/font = ExtResource("2_jc7ji")
 theme_override_font_sizes/font_size = 50
 text = "Play Again"
+
+[connection signal="pressed" from="CenterContainer/PlayAgain" to="." method="_on_play_again_pressed"]

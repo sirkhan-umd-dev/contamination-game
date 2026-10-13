@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://b04g8712myaf5"]
 
-[ext_resource type="PackedScene" uid="uid://dkrka3t2lwfku" path="res://elements/player.tscn" id="1_g7g4h"]
+[ext_resource type="PackedScene" uid="uid://dkrka3t2lwfku" path="res://scenes/player.tscn" id="1_g7g4h"]
 [ext_resource type="PackedScene" uid="uid://d1xkt7vnik8ax" path="res://scenes/background.tscn" id="1_j8ivh"]
 [ext_resource type="PackedScene" uid="uid://ciknbxivpmtpq" path="res://scenes/food.tscn" id="3_nd71p"]
-[ext_resource type="Script" uid="uid://dvdggiaycgio5" path="res://scenes/food_spawner.gd" id="4_7ddre"]
-[ext_resource type="Script" uid="uid://cbngqd6yusu25" path="res://scenes/dish_boundary.gd" id="5_qjeyg"]
+[ext_resource type="Script" uid="uid://dvdggiaycgio5" path="res://elements/scripts/food_spawner.gd" id="4_7ddre"]
+[ext_resource type="Script" uid="uid://cbngqd6yusu25" path="res://elements/scripts/dish_boundary.gd" id="5_qjeyg"]
 [ext_resource type="PackedScene" uid="uid://c88e8fu21wcbg" path="res://scenes/enemy_microbe_1.tscn" id="6_wtsjf"]
 [ext_resource type="PackedScene" uid="uid://d1ep2l0n1ghcx" path="res://scenes/enemy_microbe_2.tscn" id="7_rnaij"]
-[ext_resource type="PackedScene" uid="uid://dfire6x7mf1fo" path="res://hud.tscn" id="8_rnaij"]
+[ext_resource type="PackedScene" uid="uid://dfire6x7mf1fo" path="res://scenes/hud.tscn" id="8_rnaij"]
 
 [sub_resource type="GDScript" id="GDScript_nd71p"]
 script/source = "extends Timer

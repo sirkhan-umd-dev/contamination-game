@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b5jx7mfwrrexd"]
+
+[ext_resource type="Script" uid="uid://ciklci583qvq7" path="res://elements/scripts/main.gd" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://dfire6x7mf1fo" path="res://scenes/hud.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dkrka3t2lwfku" path="res://scenes/player.tscn" id="3_tbgi4"]
+
+[node name="Main" type="Node2D" unique_id=1950321401]
+script = ExtResource("1_sugp2")
+
+[node name="HUD" parent="." unique_id=823603767 instance=ExtResource("2_jyhfs")]
+
+[node name="Player" parent="." unique_id=94534054 instance=ExtResource("3_tbgi4")]

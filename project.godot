@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Contamination Game"
-run/main_scene="uid://b04g8712myaf5"
+run/main_scene="uid://dxp3q6dov6x1h"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
