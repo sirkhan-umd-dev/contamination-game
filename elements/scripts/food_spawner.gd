@@ -15,7 +15,10 @@ func _on_timer_timeout():
 			return
 	
 func _random_offscreen_position() -> Vector2:
-	var camera = get_viewport().get_camera_2d()
+	var camera = PlayerVariables.player_camera
+	if camera == null:
+		return Vector2.INF
+		
 	var center = camera.get_screen_center_position()
 	var half_size = get_viewport_rect().size / camera.zoom / 2.0
 	var distance = half_size.length() + margin

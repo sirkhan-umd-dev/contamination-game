@@ -1,5 +1,5 @@
 extends StaticBody2D
-@export var radius := Vector2(1750, 1650)  # half-width, half-height of the dish
+@export var radius := Vector2(4000, 3450)  # half-width, half-height of the dish
 @export var segments := 64
 
 func _ready():

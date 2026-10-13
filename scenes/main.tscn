@@ -2,11 +2,19 @@
 
 [ext_resource type="Script" uid="uid://ciklci583qvq7" path="res://elements/scripts/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://dfire6x7mf1fo" path="res://scenes/hud.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://b8y13iqni2x82" path="res://scenes/arena.tscn" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://dkrka3t2lwfku" path="res://scenes/player.tscn" id="3_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://ciknbxivpmtpq" path="res://scenes/food.tscn" id="5_tbgi4"]
 
 [node name="Main" type="Node2D" unique_id=1950321401]
 script = ExtResource("1_sugp2")
 
+[node name="Arena" parent="." unique_id=1055088889 instance=ExtResource("2_tbgi4")]
+position = Vector2(-23, 3)
+
 [node name="HUD" parent="." unique_id=823603767 instance=ExtResource("2_jyhfs")]
 
 [node name="Player" parent="." unique_id=94534054 instance=ExtResource("3_tbgi4")]
+
+[node name="Food" parent="." unique_id=1656821891 instance=ExtResource("5_tbgi4")]
+position = Vector2(-3930.1914, 1056.6462)

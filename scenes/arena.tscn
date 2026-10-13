@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://b8y13iqni2x82"]
+
+[ext_resource type="Texture2D" uid="uid://bvyw7nvgq1hk0" path="res://resources/Petri_Dish_backdrop_big.png" id="1_ubfh8"]
+[ext_resource type="Script" uid="uid://cbngqd6yusu25" path="res://elements/scripts/dish_boundary.gd" id="2_444vf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_444vf"]
+size = Vector2(38.300034, 814.3001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27ga2"]
+size = Vector2(34.60018, 821.4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0wof"]
+size = Vector2(950.6001, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fu4bq"]
+size = Vector2(995.15, 43.950043)
+
+[node name="Arena" type="Node2D" unique_id=1055088889]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1085200650]
+scale = Vector2(10, 10)
+texture = ExtResource("1_ubfh8")
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=613251273]
+position = Vector2(-1, -1.9073486e-06)
+scale = Vector2(10, 10)
+
+[node name="RightWall" type="CollisionShape2D" parent="Walls" unique_id=506587791]
+position = Vector2(479.74994, 25.749992)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_444vf")
+
+[node name="LeftWall" type="CollisionShape2D" parent="Walls" unique_id=1366366490]
+position = Vector2(-434.10007, 31.3)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_27ga2")
+
+[node name="BottomWall" type="CollisionShape2D" parent="Walls" unique_id=1541836521]
+position = Vector2(13.8, 378.19998)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_h0wof")
+
+[node name="TopWall" type="CollisionShape2D" parent="Walls" unique_id=2013923324]
+position = Vector2(3.9000025, -319.2)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_fu4bq")
+
+[node name="DishBoundary" type="StaticBody2D" parent="." unique_id=1750997113]
+script = ExtResource("2_444vf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DishBoundary" unique_id=685887742]
+position = Vector2(-3922, 1066)
+polygon = PackedVector2Array(16, -1145, 176, -1609, 306, -1899, 480, -2182, 618, -2341, 763, -2472, 923, -2639, 1060, -2798, 1372, -2943, 1532, -3088, 1807, -3226, 2112, -3393, 2568, -3552, 3148, -3704, 4976, -3712, 5548, -3552, 6041, -3407, 6310, -3240, 6621, -3088, 6766, -2958, 7085, -2798, 7223, -2646, 7397, -2501, 7528, -2356, 7658, -2189, 7803, -1921, 7957, -1606, 8109, -1164, 8000, -192, 7834, 272, 7696, 569, 7551, 881, 7399, 1033, 7239, 1178, 7080, 1338, 6797, 1490, 6637, 1628, 6326, 1787, 6036, 1918, 5579, 2084, 4968, 2232, 3177, 2225, 2576, 2080, 2148, 1921, 1829, 1783, 1546, 1623, 1379, 1486, 1104, 1333, 923, 1188, 792, 1058, 640, 891, 488, 615, 328, 289, 161, -160, 9, -356, -1, -352, -1, -352, -1, -352)

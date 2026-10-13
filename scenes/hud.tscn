@@ -19,15 +19,16 @@ anti_aliasing = false
 script = ExtResource("1_8sq4i")
 
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=2061028448]
-offset_left = 11.0
-offset_top = 606.0
-offset_right = 250.0
-offset_bottom = 638.0
+offset_left = 32.0
+offset_top = 610.0
+offset_right = 271.0
+offset_bottom = 642.0
 theme_override_fonts/font = ExtResource("1_37p78")
 theme_override_font_sizes/font_size = 26
 theme_override_styles/fill = SubResource("StyleBoxFlat_tg5hg")
 value = 100.0
 rounded = true
+show_percentage = false
 
 [node name="FoodEaten" type="RichTextLabel" parent="." unique_id=735808945]
 offset_left = 6.0
@@ -55,7 +56,6 @@ text = "15"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("3_640wx")
 
 [node name="MilestoneTimer" type="Timer" parent="MilestoneTimerLabel" unique_id=1504326536]
-wait_time = 15.0
+script = ExtResource("3_640wx")
