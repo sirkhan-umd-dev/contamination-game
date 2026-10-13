@@ -1,6 +1,7 @@
 extends Node
 signal food_eaten(new_amount)
-signal ability_unlocked(ability) # 0 = dash, 1 = slime toss, 2 = slime trail
+signal ability_unlocked(ability) # 0 = dash, 1 = slime toss, 2 = invis
+signal stat_gained(stat)
 
 @onready var milestone_timer = $HUD/MilestoneTimerLabel/MilestoneTimer
 @onready var player = $Player
@@ -31,7 +32,9 @@ func handle_growth(ability_gained: bool):
 	if ability_gained:
 		ability_unlocked.emit(0)
 	else:
-		pass
+		var stat = randi() % 5
+		stat_gained.emit(stat)
+		print(stat + " gained!")
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -55,7 +55,7 @@ text = "15"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("3_640wx")
 
 [node name="MilestoneTimer" type="Timer" parent="MilestoneTimerLabel" unique_id=1504326536]
 wait_time = 15.0
+script = ExtResource("3_640wx")
