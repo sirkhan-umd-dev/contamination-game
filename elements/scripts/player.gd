@@ -1,12 +1,16 @@
 extends CharacterBody2D
 
 @export var speed = 10000.0
-@export var stamina = 3
 @export var max_stamina = 3
 @export var stamina_cd = 3
 @export var invis_cd = 8
 @export var friction = 0.95
 @export var detection_chance = 1
+@export var stamina = 3:
+	set(value):
+		stamina = value
+		PlayerVariables.stamina_changed.emit(stamina, max_stamina)
+		
 var temp_detection_chance = detection_chance
 var dash_unlocked = false
 var shoot_unlocked = false
@@ -22,7 +26,8 @@ var invis_unlocked = false
 
 func _ready() -> void:
 	PlayerVariables.ability_unlocked.connect(_on_ability_gained)
-	PlayerVariables.stat_boost.connect(_on_stat_gained)
+	PlayerVariables.stat_gained.connect(_on_stat_gained)
+	_emit_stamina.call_deferred()
 	
 func _process(_delta):
 	
@@ -64,6 +69,9 @@ func _physics_process(delta: float) -> void:
 		velocity *= friction
 	move_and_slide()
 
+func _emit_stamina()-> void:
+	PlayerVariables.stamina_changed.emit(stamina, max_stamina)
+
 func _on_stamina_cooldown_timeout() -> void:
 	stamina += 1
 	print("Stamina restored")
@@ -72,7 +80,9 @@ func _on_ability_gained(ability: int) -> void:
 	
 	if ability == 0:
 		dash_unlocked = true
-	if ability == 1:
+	elif ability == 1:
+		shoot_unlocked = true
+	elif ability == 2:
 		invis_unlocked = true
 
 func _on_stat_gained(stat: int) -> void:
@@ -86,7 +96,7 @@ func _on_stat_gained(stat: int) -> void:
 	elif stat == 3:
 		_camera.zoom = Vector2(_camera.zoom.x - 0.1, _camera.zoom.y - 0.1)
 	elif stat == 4:
-		stamina_cd = max(0.5, stamina.cd - 0.5)
+		stamina_cd = max(0.5, stamina_cd - 0.5)
 		invis_cd = max(5.5, invis_cd - 0.5)
 
 

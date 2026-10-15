@@ -6,7 +6,7 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	hide()
 	PlayerVariables.ability_unlocked.connect(_set_notification_msg)
-	pass # Replace with function body.
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -16,11 +16,11 @@ func _process(delta: float) -> void:
 
 func _set_notification_msg(ability: int) -> void:
 	if ability == 0:
-		$CenterContainer/Label.text = "Dash Ability Acquired"
+		$CenterContainer/Label.text = "Press Z to Dash!"
 	elif ability == 1:
-		$CenterContainer/Label.text = "Shoot Ability Acquired"
+		$CenterContainer/Label.text = "Press X to Shoot!"
 	elif ability == 2:
-		$CenterContainer/Label.text = "Invisibility Acquired"
+		$CenterContainer/Label.text = "Press C to go Invisible!"
 	show()
 	get_tree().paused = true
 	

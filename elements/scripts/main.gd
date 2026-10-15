@@ -5,7 +5,6 @@ extends Node2D
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	milestone_timer.wait_time = 30
 	PlayerVariables.player_died.connect(_show_end_screen)
 	pass # Replace with function body.
 

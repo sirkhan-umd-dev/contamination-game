@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dkrka3t2lwfku" path="res://scenes/player.tscn" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://ciknbxivpmtpq" path="res://scenes/food.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://dwqkjpya76p2o" path="res://scenes/food_spawner.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://cus35d2snvxoj" path="res://scenes/ability_notification.tscn" id="7_tipki"]
+[ext_resource type="PackedScene" uid="uid://bilbunosjrw7i" path="res://scenes/ui_stat_picker.tscn" id="8_85g3d"]
 
 [node name="Main" type="Node2D" unique_id=1950321401]
 script = ExtResource("1_sugp2")
@@ -21,3 +23,7 @@ position = Vector2(-23, 3)
 position = Vector2(-141, 69)
 
 [node name="FoodSpawner" parent="." unique_id=1904963109 instance=ExtResource("6_tefeu")]
+
+[node name="AbilityNotif" parent="." unique_id=601952278 instance=ExtResource("7_tipki")]
+
+[node name="StatPicker" parent="." unique_id=265394552 instance=ExtResource("8_85g3d")]

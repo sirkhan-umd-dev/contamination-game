@@ -1,5 +1,4 @@
 extends CanvasLayer
-signal stat_gained(stat)
 
 @onready var buttons: Array = [$StatOption1, $StatOption2, $StatOption3]
 var current_choices: Array = []

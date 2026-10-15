@@ -5,6 +5,7 @@ extends Timer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	PlayerVariables.milestone_timer = self
+	wait_time = 30
 	start()
 	pass # Replace with function body.
 

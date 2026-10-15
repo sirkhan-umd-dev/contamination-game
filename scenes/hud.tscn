@@ -61,4 +61,14 @@ vertical_alignment = 1
 wait_time = 15.0
 script = ExtResource("3_640wx")
 
+[node name="Stamina" type="Label" parent="." unique_id=2070502609]
+offset_left = 1027.0
+offset_top = 6.0
+offset_right = 1147.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0, 0.61960787, 0, 1)
+theme_override_fonts/font = ExtResource("1_37p78")
+theme_override_font_sizes/font_size = 48
+text = "Stamina"
+
 [connection signal="timeout" from="MilestoneTimerLabel/MilestoneTimer" to="." method="_on_milestone_timer_timeout"]
