@@ -43,7 +43,7 @@ func eat_food(amount := 1):
 	food_amount += amount
 	if(food_amount >= growth_checks[growth_index]): #ability gain
 		handle_growth(growth_index < 2)
-		milestone_timer.wait_time = 20 
+		milestone_timer.start(30)
 		growth_index = min(growth_index + 1, 2) 
 	food_eaten.emit(food_amount)
 	print("Food Eaten: ", amount)
