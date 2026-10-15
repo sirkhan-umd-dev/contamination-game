@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 radius = 16.0
 height = 38.0
 
-[node name="Food" type="Node2D" unique_id=1656821891]
+[node name="Food" type="Node2D" unique_id=1656821891 groups=["food"]]
 editor_description = "Food for the microbe
 Can be eaten by being collided with by the microbe or the microbe's tentacle"
 script = ExtResource("1_af40f")

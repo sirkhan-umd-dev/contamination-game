@@ -5,18 +5,6 @@ extends Node2D
 @export var dish_center := Vector2.ZERO
 @export var dish_radius := Vector2(3850, 3200)  # slightly smaller than the wall
 
-func _on_timer_timeout():
-	print("spawn timer fired, camera: ", PlayerVariables.player_camera)
-	for attempt in 1:
-		var pos = _random_offscreen_position()
-		if _is_inside_dish(pos):
-			var food = food_scene.instantiate()
-			add_child(food)
-			food.global_position = pos
-			print("spawned at ", pos)
-			return
-	print("no valid position found")
-	
 func _random_offscreen_position() -> Vector2:
 	var camera = PlayerVariables.player_camera
 	if camera == null:
@@ -39,3 +27,16 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_food_spawn_timer_timeout() -> void:
+	print("spawn timer fired, camera: ", PlayerVariables.player_camera)
+	for attempt in 0.5:
+		var pos = _random_offscreen_position()
+		if _is_inside_dish(pos):
+			var food = food_scene.instantiate()
+			add_child(food)
+			food.global_position = pos
+			print("spawned at ", pos)
+			return
+	print("no valid position found")

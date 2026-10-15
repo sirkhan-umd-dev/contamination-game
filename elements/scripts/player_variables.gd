@@ -61,11 +61,13 @@ func handle_growth(ability_gained: bool):
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	player_died.connect(_on_player_died)
 
+func _on_player_died() -> void:
+	get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if player_health == 0:
-		get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
-	pass
+func reset() -> void:
+	food_amount = 0
+	max_health = 50
+	player_health = 50
+	growth_index = 0

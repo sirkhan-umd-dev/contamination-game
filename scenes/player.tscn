@@ -85,7 +85,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_nhe5y"]
 radius = 14.0
 
-[node name="Player" type="CharacterBody2D" unique_id=94534054 groups=["player"]]
+[node name="Player" type="CharacterBody2D" unique_id=94534054]
 script = ExtResource("1_sf2tj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=136622635]
@@ -93,7 +93,7 @@ position = Vector2(1, 5)
 sprite_frames = SubResource("SpriteFrames_vh3rb")
 frame_progress = 0.38536957
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1444607312]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1444607312 groups=["player"]]
 shape = SubResource("CircleShape2D_nhe5y")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1098510036]

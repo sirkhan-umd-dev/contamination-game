@@ -11,6 +11,7 @@ var state = 0 # 0 = idle, 1 = fleeing, 2 = chasing
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	add_to_group("carnivore")
 	rotation = randf_range(0, 360) 
 	speed = speed * randf_range(0.5, 2)
 	activity_time = activity_time * randf_range(0.7, 1.3)
@@ -37,11 +38,11 @@ func _on_detection_radius_body_entered(body: Node2D) -> void:
 
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	if body.is_in_group("carnivore") && body.scale > scale:
-		if body.is_in_group("player"):
-			PlayerVariables.eat_food(ceil(scale.length() * 5))
-		
+	if body.is_in_group("player") && body.scale > scale:
+		PlayerVariables.eat_food(ceil(scale.length() * 5))
 		queue_free()
+	elif body.is_in_group("player"):
+		PlayerVariables.take_damage(25)
 
 func _on_detection_radius_area_exited(area: Area2D) -> void:
 	state = 0

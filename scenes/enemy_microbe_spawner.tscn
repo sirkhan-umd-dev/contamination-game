@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dd1w7nf2nj7yk"]
+
+[ext_resource type="Script" uid="uid://02qane5mtf5n" path="res://elements/scripts/enemy_microbe_spawner.gd" id="1_7q81u"]
+[ext_resource type="PackedScene" uid="uid://c88e8fu21wcbg" path="res://scenes/enemy_microbe_1.tscn" id="2_04e46"]
+[ext_resource type="PackedScene" uid="uid://d1ep2l0n1ghcx" path="res://scenes/enemy_microbe_2.tscn" id="3_26ama"]
+
+[node name="EnemyMicrobeSpawner" type="Node2D" unique_id=1111954576]
+script = ExtResource("1_7q81u")
+enemy_microbe1_scene = ExtResource("2_04e46")
+enemy_microbe2_scene = ExtResource("3_26ama")
+
+[node name="EnenySpawnTimer" type="Timer" parent="." unique_id=662462439]
+autostart = true
+
+[connection signal="timeout" from="EnenySpawnTimer" to="." method="_on_eneny_spawn_timer_timeout"]

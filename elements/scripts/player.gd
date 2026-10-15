@@ -25,6 +25,7 @@ var invis_unlocked = false
 @onready var _camera = $Camera2D
 
 func _ready() -> void:
+	add_to_group("player")
 	PlayerVariables.ability_unlocked.connect(_on_ability_gained)
 	PlayerVariables.stat_gained.connect(_on_stat_gained)
 	_emit_stamina.call_deferred()
