@@ -14,4 +14,5 @@ func _process(delta: float) -> void:
 	pass
 	
 func _show_end_screen():
-	get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
+	pass
+	#get_tree().change_scene_to_file("res://scenes/end_screen.tscn")

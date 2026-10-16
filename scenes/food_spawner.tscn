@@ -25,5 +25,5 @@ food_scene = ExtResource("2_2nf2v")
 autostart = true
 script = SubResource("GDScript_nd71p")
 
-[connection signal="timeout" from="FoodSpawnTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="FoodSpawnTimer" to="." method="_on_food_spawn_timer_timeout"]
+[connection signal="timeout" from="FoodSpawnTimer" to="." method="_on_timer_timeout"]

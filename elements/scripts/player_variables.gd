@@ -16,7 +16,7 @@ var max_health := 50
 var player_health := 50
 var stat_pool = ["Speed", "Size", "Evasion", "Senses", "Stamina"]
 var growth_index = 0
-var growth_checks = [10, 25, 50]
+var growth_checks = [10, 25, 10]
 
 func take_damage(amount: int) -> void:
 	set_health(player_health - amount)
@@ -36,12 +36,15 @@ func get_stat_choices(count: int = 3) -> Array:
 	pool.shuffle()
 	return pool.slice(0, count)
 
-func apply_stat(stat: int):
-	stat_gained.emit(stat)
-		
+func apply_stat(stat):
+	if stat is int:
+		stat_gained.emit(stat_pool[stat])
+	else:
+		stat_gained.emit(stat)
+
 func eat_food(amount := 1):
 	food_amount += amount
-	if(food_amount >= growth_checks[growth_index]): #ability gain
+	if(food_amount >= growth_checks[growth_index] && growth_index < 2 || growth_index == 2 && food_amount % growth_checks[growth_index] == 0): #ability gain
 		handle_growth(growth_index < 2)
 		milestone_timer.start(30)
 		growth_index = min(growth_index + 1, 2) 
